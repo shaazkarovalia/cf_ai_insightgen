@@ -59,8 +59,8 @@ function renderHTML() {
     <title>InsightGen AI</title>
     <style>
       :root { --primary: #2563eb; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; }
-      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px; display: flex; flex-direction: column; align-items: center; }
-      .container { width: 100%; max-width: 600px; }
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+      .container { width: 100%; max-width: 600px; flex: 1; }
       h1 { text-align: center; margin-bottom: 2rem; }
       .card { background: var(--card); border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 20px; }
       
@@ -73,7 +73,7 @@ function renderHTML() {
         border: 1px solid #cbd5e1; 
         border-radius: 8px; 
         font-size: 16px; 
-        min-width: 0; /* Prevents overflow issues */
+        min-width: 0;
       }
       
       button { 
@@ -85,10 +85,9 @@ function renderHTML() {
         font-size: 16px; 
         font-weight: 600; 
         cursor: pointer;
-        flex-shrink: 0; /* Prevents button from getting squished */
+        flex-shrink: 0;
       }
 
-      /* On very small screens (phones), stack them vertically */
       @media (max-width: 480px) {
         .input-group { flex-direction: column; }
         button { width: 100%; }
@@ -113,6 +112,15 @@ function renderHTML() {
         display: flex; align-items: center; justify-content: center;
         font-size: 14px; font-weight: bold; color: var(--primary);
       }
+
+      /* Footer Styling */
+      .footer {
+        margin-top: 40px;
+        color: #94a3b8;
+        font-size: 14px;
+        text-align: center;
+        padding-bottom: 10px;
+      }
     </style>
   </head>
   <body>
@@ -135,6 +143,11 @@ function renderHTML() {
         <ul id="historyList"><li>Loading...</li></ul>
       </div>
     </div>
+
+    <div class="footer">
+      Built with Cloudflare Workers by Shaaz Ali
+    </div>
+
     <script>
       async function submitTopic() {
         const topic = document.getElementById('topicInput').value;
