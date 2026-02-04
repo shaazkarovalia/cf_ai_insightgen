@@ -2,6 +2,8 @@
 
 A Cloudflare AI application that demonstrates the use of Workers, D1, and Workers AI.
 
+**🚀 Live Demo:** [https://cf-ai-insightgen.shaaz-dev.workers.dev](https://cf-ai-insightgen.shaaz-dev.workers.dev)
+
 ## Features
 - **Workers AI**: Uses Llama 3.3 (70B) for high-quality, intelligent summaries.
 - **Worker Coordination**: Orchestrates the AI generation and database saving steps directly in the backend.
